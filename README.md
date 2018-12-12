@@ -1,4 +1,4 @@
-# Gumball Machine Drink Dispenser
+# Gumball Drink Machine
 Brian Kaplan & Adam Elghor
 ECE 4180 Final Project
 
