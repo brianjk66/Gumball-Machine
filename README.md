@@ -2,6 +2,10 @@
 Brian Kaplan & Adam Elghor
 ECE 4180 Final Project
 
+![Finished System](https://raw.githubusercontent.com/brianjk66/Gumball-Machine/master/Pictures/Assembly/Finished%20System%201.JPG)
+
+[Project Demo](https://youtu.be/TyXLxnWFjBc)
+
 ## Project Idea
 The idea of this project was to create an automated drink dispensing system centered around the mbed.  This project is intended to be an interactive system that mixes and dispenses internally stored drinks.  We wanted the system to resemble a gumball machine to give it a nice aesthetic and charm.
 
@@ -10,6 +14,8 @@ We decided to make the system gravity-fed for the sake of simplicity with the dr
 We also considered the use of [peristaltic pumps](https://www.adafruit.com/product/1150) for better liquid dispensing, a [liquid flow meter](https://www.adafruit.com/product/828) for better liquid measurement, and a [rotary encoder](https://www.adafruit.com/product/377) as an alternate user interface.  However, peristaltic pumps are costly (~$25 each), the flow meter was incredibly bulky and could not fit within the system, and the rotary encoder made for a confusing hybrid UI so we removed it as well.
 
 ## Hardware Setup
+
+### Mechanical Components
 The mechanical system consists of the following components:
 - Handmade wooden body and lid
 - 1ft Acrylic Sphere
@@ -22,6 +28,7 @@ The mechanical system consists of the following components:
 - Assorted Push-Fit Connecters and Fittings
 - 10ft, 1/4" OD Polyethylene Tubing (food-safe)
 
+### Electrical Components
 The electrical system consists of the following components:
 - Custom Printed Circuit Board:
   - mbed Microcontroller
@@ -50,12 +57,17 @@ The final program that runs on the system is fairly straightforward.  It feature
 The main loop body initializes all the peripherals as needed and sets up an interrupt routine for when a user touches the display.  If the user has selected an on-screen button corresponding to a drink, then the system dispenses the drink according to its recipe.  The dispensing routine starts a timer and opens the appropriate valves for durations that are directly proportional to the ratios provided in the recipe. The scaling factor (called TIME_SCALAR) must be calibrated based on the flow of drinks through the system
 
 ## Instructions
+
+### Woodwork
 The wooden body of the system was made by cutting several carefully measured trapezoids out of 8ft 2x4s and arranging them into 13 octagonal rings of decreasing size.  The rings were then glued together and stacked to form a conical structure.  This was then fastened to a lathe and turned down to the final shape of the system.  Cutouts were then made for the touchscreen and the cup hole.  The lid of the system was also turned on a lathe as well.
 
+### The Sphere
 The acrylic sphere had five holes drilled in it (one for structural support and 4 for tubing) and situated on top of the system.  The condiment bottles had holes drilled in their bases and had tubing fed in through the bottom and sealed with a combination of FDA-approved silicone sealant and hot glue.  The condiment bottles were placed in the sphere with the tubing passing through the previously mentioned holes and the lid was placed on top.  The threaded steel rod was cut to about 30" and fed through the lid, sphere, and bottom faceplate to serve as a central support column for the system, secured by a nut and washer on either side.
 
+### Plumbing
 The tubing assembly of the system consisted of the 4 solenoids connecting to the condiment bottles on one side.  On the other side, the solenoids connected to a set of Y-connectors to merge the 4 tubes into one for the output nozzle.  This tubing assembly was secured to the inside of the wooden body using hot glue.
 
+### Electrical
 The electrical system consisted primarily of a PCB.  The PCB took a 12V input for power and an onboard linear regulator to step the power down to 5V for the LCD and flow meter (which was later removed).  The PCB featured 4 driver sub-circuits to allow the mbed to open and close the solenoid valves (which used 12V power) via a DigitalOut pin.  The driver sub-circuits consisted of an N-channel MOSFET, a gate drive resistor, a gate pulldown resistor, and a fly-back diode.  The PCB connected touchscreen, the driver sub-circuits, the rotary encoder (removed), and the flow meter (removed) all to the appropriate mbed ports.  The PCB and touchscreen were mounted inside the body of the system using hot glue.
 
 ## Acknowledgements
