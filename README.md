@@ -1,13 +1,12 @@
 # Gumball Drink Machine
-Brian Kaplan & Adam Elghor
-ECE 4180 Final Project
+By Brian Kaplan & Adam Elghor
 
 ![Finished System](https://raw.githubusercontent.com/brianjk66/Gumball-Machine/master/Pictures/Assembly/Finished%20System%201.JPG)
 
 [Project Demo](https://youtu.be/TyXLxnWFjBc)
 
 ## Project Idea
-The idea of this project was to create an automated drink dispensing system centered around the mbed.  This project is intended to be an interactive system that mixes and dispenses internally stored drinks.  We wanted the system to resemble a gumball machine to give it a nice aesthetic and charm.
+The idea of this project was to create an automated drink dispensing system centered around the mbed platform.  This project is intended to be an interactive system that mixes and dispenses internally stored drinks.  We wanted the system to resemble a gumball machine to give it a nice aesthetic and charm.
 
 We decided to make the system gravity-fed for the sake of simplicity with the drinks being stored in a sphere at the top.  The drinks would then be dispensed via solenoid control valves into a cup at the base of the system.  The user interface to the system would be a [TFT LCD touchscreen](https://www.adafruit.com/product/2090) that a user can use to select the drink of their choice.
 
